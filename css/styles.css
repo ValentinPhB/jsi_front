@@ -1,0 +1,322 @@
+h1, h2, h3, h4, a, #button_best {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 1px 0 #FFF;
+  opacity: 0.99;
+}
+
+h1 {
+  text-align: left;
+  opacity: 1;
+  font-size: 70px;
+  margin-left: 30px;
+  border-bottom: 2px solid #FFF;
+}
+
+h2, a, h3 {
+  font-size: 30px;
+}
+
+a {
+  color: #000;
+  text-shadow: 0 1px 0 #000;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../images/back_color.jpg");
+  background-size: cover;
+}
+
+html h3, body h3 {
+  margin: 10px;
+  padding: 5px;
+}
+
+/**
+Menu TOP PAGE
+*/
+menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+#jsi_menu {
+  margin-top: 0px;
+  border-bottom: 4px solid #000;
+}
+
+.left_title {
+  width: 100%;
+}
+
+.right_options {
+  display: inline;
+  width: 60%;
+}
+
+.right_options > ol {
+  list-style-type: none;
+}
+
+#navigation {
+  width: 100%;
+}
+
+#navigation a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  float: left;
+  margin-top: 80px;
+  width: 40%;
+  padding-right: 20px;
+}
+
+#navigation li a:hover {
+  color: #F7F7F7;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+/**
+HEADER Best Movie
+*/
+#header_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  border-bottom: 4px solid #000;
+}
+
+#header_container > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#header_container > div > img {
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 5px 5px 5px #F9F9F9;
+          box-shadow: 5px 5px 5px #F9F9F9;
+  border-radius: 7px;
+}
+
+#information_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+#information_container > h2 {
+  text-align: center;
+}
+
+#button_best {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+  -webkit-box-shadow: 5px 5px 5px #000;
+          box-shadow: 5px 5px 5px #000;
+  background-color: black;
+  font-size: 20px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #FFF;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#button_best:hover {
+  background-color: #FFF;
+  color: #000;
+  text-shadow: 0 1px 0 #000;
+}
+
+/**
+CAROUSELS
+*/
+.carousel {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+.carousel__container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.carousel__container::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.carousel__item {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  float: left;
+}
+
+.carousel__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.carousel__item:hover .img_format .item_body {
+  visibility: visible;
+}
+
+.img_format img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 5px 5px 5px #F9F9F9;
+          box-shadow: 5px 5px 5px #F9F9F9;
+  border-radius: 7px;
+}
+
+.img_format .item_body {
+  border: 1px solid #fff;
+  visibility: hidden;
+  display: block;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #000;
+  width: 182px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  -webkit-box-shadow: 5px 5px 5px #F9F9F9;
+          box-shadow: 5px 5px 5px #F9F9F9;
+}
+
+.img_format .item_body h4 {
+  position: relative;
+  font-size: 15px;
+  text-shadow: none;
+  margin-bottom: 2px;
+}
+
+.carousel__next, .carousel__prev {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #FFF url(../images/next.svg) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -40px;
+  right: 0px;
+  -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+          box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.carousel__next:hover, .carousel__prev:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.carousel__prev {
+  right: auto;
+  left: 20px;
+  background: #FFF url(../images/back.svg) center center no-repeat;
+  background-size: 20px 20px;
+}
+
+.carousel__next {
+  margin-right: 20px;
+}
+
+.carousel__next--hidden, .carousel__prev--hidden {
+  opacity: 0;
+}
+
+.item_body {
+  width: 100%;
+}
+
+/**
+Media Queries
+*/
+@media screen and (max-width: 1000px) {
+  h1 {
+    margin-left: 50px;
+    text-align: center;
+    margin-right: 70px;
+    font-size: 58px;
+    padding-left: 5px;
+  }
+  menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .right_options {
+    width: 100%;
+  }
+  .right_options > ol {
+    list-style-type: none;
+  }
+  #navigation li a {
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    float: left;
+    width: 40%;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #navigation li a {
+    width: 35%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
