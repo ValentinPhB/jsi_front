@@ -4,44 +4,56 @@
     <meta charset="utf-8" />
     <title>Just Stream It 1.1</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <!-- Favicon-->
     <link rel="icon" type="image/png" href="./images/jsi_logo.png" />
-
-    <!-- Scripts API -->
-    <script type="text/javascript" src="javascript/header_info.js"async ></script>
-
-    <script type="text/javascript" src="javascript/carsl_create.js"></script>
-
-
+    <script src="./dist/polyfill.bundle.js"></script>
+    <script src="./dist/app.bundle.js"></script>
 </head>
+
 <body>
-    <menu id="jsi_menu">
-        <div class="left_title">
+    <nav class="jsi-menu">
+        <div class="jsi-menu__left">
             <h1>JusteStreamIt</h1>
         </div>
-        <div class="right_options">
-        <ol id="navigation">
+        <menu class="jsi-menu__right">
             <li><a href="#" title="aller à la section acceuil">Acceuil</a></li>
             <li><a href="#" title="aller à la section catégorie">Catégories</a></li>
-        </ol>
-        </div>
-    </menu>
+        </menu>
+    </nav>
+
     <header>
-        <div id="header_container">
-            <div id="best_movie_img"></div>
-            <div id="information_container">
-                <div id="title_movie"></div>
-                <BUTTON id="button_best">Play</BUTTON>
+        <div class="best-movie">
+            <div class="best-movie__img"></div>
+            <div class="best-movie__info">
+                <div class="best-movie__title"></div>
+                <BUTTON class="best-movie__button">Play</BUTTON>
+                <div class="best-movie__resume"></div>
             </div>
         </div>
     </header>
     <div class="all_carousels">
-        <h3>Films les mieux notés :</h3>
-        <div id="carousel1"></div>
-        <h3>Genre Horreur :</h3>
-        <div id="carousel2"></div>
-        <div id="carousel3"></div>
-        <div id="carousel4"></div>
+        <div id="carousel1">Films les mieux notés :</div>
+        <div id="carousel2">Films Genre "Drames" :</div>
+        <div id="carousel3">Films Genre "Romances" :</div>
+        <div id="carousel4">Films Genre "Comédies" :</div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <img id="img-movie" src="//:0" alt="">
+            <h3 id="title"></h3>
+            <h3 id="genres"></h3>
+            <h3 id="date_published"></h3>
+            <h3 id="rated"></h3>
+            <h3 id="imdb_score"></h3>
+            <h3 id="directors"></h3>
+            <h3 id="actors"></h3>
+            <h3 id="duration"></h3>
+            <h3 id="countries"></h3>
+            <h3 id="worldwide_gross_income"></h3>
+            <h3 id="long_description"></h3>
+            <br>
+        </div>
     </div>
 </body>
 </html>
