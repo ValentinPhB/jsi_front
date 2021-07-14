@@ -1,0 +1,38 @@
+h1, h2, h3, h4, a, #button_best {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 1px 0 #FFF;
+  opacity: 0.99;
+}
+
+h1 {
+  text-align: left;
+  opacity: 1;
+  font-size: 70px;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-bottom: 2px solid #FFF;
+}
+
+h2, h3, a {
+  font-size: 30px;
+}
+
+a {
+  color: #000;
+  text-shadow: 0 1px 0 #000;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../images/back_color.jpg");
+  background-size: cover;
+}
+
+html h3, body h3 {
+  margin: 10px;
+  padding: 10px;
+}
+/*# sourceMappingURL=typography.css.map */

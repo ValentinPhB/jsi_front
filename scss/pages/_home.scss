@@ -1,0 +1,290 @@
+/**
+HEADER Best Movie
+*/
+
+.best-movie {
+  display: flex;
+  padding-bottom: 20px;
+  flex-direction: row-reverse;
+  border-bottom: 4px solid #000;
+  &__img {
+    flex: 1;
+  }
+  &__img > img {
+    cursor: pointer;
+    display: block;
+    @include margin-lr;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    box-shadow: 5px 5px 5px #F9F9F9;
+    border-radius: 7px;
+    transition: transform 0.3s;
+  }
+  &__img img:hover {
+    transform: scale(1.3);
+  }
+  &__info {
+    display: flex;
+    padding-left: 20px;
+    flex-direction: column;
+    flex: 2;
+  }
+  &__info > h2 {
+    text-align: center;
+  }
+  &__button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    display: block;
+    @include margin-lr;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px #000;
+    background-color: black;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #FFF;
+    transition-duration: 0.4s;
+  }
+  &__button:hover {
+    background-color: #FFF; 
+    color: #000;
+    text-shadow: 0 1px 0 #000;
+  }
+}
+
+/**
+CAROUSELS
+*/
+.carousel {
+  padding: 0;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  &__container {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+  }
+  &__container::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+  &__item {
+    cursor: pointer;
+    transition: transform 0.3s;
+    float: left;
+  }
+  &__item:hover {
+    .img_format .item_body {
+    visibility: visible;
+  }
+  transform: scale(1.2)
+  }
+  &__next, &__prev {
+    position: absolute;
+    width : 60px;
+    height : 60px;
+    background: #FFF url(../images/arrows/next.svg) center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -40px;
+    right: 0px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  &__next:hover, &__prev:hover {
+    transform: scale(1.2);
+  }
+  &__prev {
+    right: auto;
+    left: 20px;
+    background: #FFF url(../images/arrows/back.svg) center center no-repeat;
+    background-size: 20px 20px;
+  }
+  &__next {
+    margin-right: 20px;
+  }
+  &__next--hidden, &__prev--hidden {
+    opacity: 0;
+  }
+  &__img-format img {
+    display: block;
+    @include margin-lr;
+    border: 2px solid #fff;
+    box-shadow: 5px 5px 5px #F9F9F9;
+    border-radius: 7px;
+  }
+  &__img-format &__item-body {
+    h4 {
+        position: relative;
+        font-size: 15px;
+        text-shadow: none;
+        margin-bottom: 2px;
+  }
+    border: 1px solid #fff;
+    visibility: hidden;
+    display: block;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #000;
+    width: 182px;
+    @include margin-lr;
+    margin-top: -20px;
+    box-shadow: 5px 5px 5px #F9F9F9;
+  }
+  &__item-body {
+    width: 100%;
+  }
+}
+
+/**
+Modals
+*/
+.modal {
+  display: none;
+  position: fixed; 
+  flex-wrap: wrap;
+  border: 2px solid #fff;
+  border-radius: 0.5%;
+  box-shadow: 5px 5px 5px #F9F9F9;
+  z-index: 1; 
+  left: 20%;
+  top: 17%;
+  width: 60%; 
+  height: 75%;  
+  overflow: auto;
+  background-image: url('../images/backgrounds/modal_black.jpg');
+  background-size: cover;
+  &__content > img {
+    float: right;
+    margin-top: -40px;
+    margin-right: 50px;
+  }
+  &__content h3 {
+    font-size: 15px;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  &__close {
+    color: #FFF;
+    float: right;
+    padding-right: 15px;
+    margin-top: -80px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  &__close:hover, &__close:focus {
+    color: #FF0505;
+    cursor: pointer;
+  }
+} 
+
+#title {
+  margin-top: 80px;
+}
+
+/**
+Media Queries
+*/
+
+@media screen and (max-width: 1000px) {
+  h1 {
+    text-align: center;
+    font-size: 58px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+ .jsi-menu{
+    margin-left: 0px;
+    padding-left: 0px;
+    flex-direction: column;
+    &__right {
+      width: 100%;
+      margin-left: -40px;
+    }
+    &__right li a {
+      text-decoration: none;
+      width: 50%;
+      margin-bottom: 30px;
+      margin-top: -30px;
+    }
+    &__left {
+    margin-left: 0px;
+  }
+  }
+  
+  .best-movie {
+    &__info {
+      margin: 0;
+      padding: 0;
+    }
+    &__resume {
+      display: none;
+    }
+    &__title {
+      flex:2;
+      margin-top: 30px;
+    }
+    &__button {
+      flex: 1;
+    }
+  }
+
+  .modal {
+    &__content > img {
+      float: none;
+      margin-top: 50px;
+      display: block;
+      @include margin-lr;
+    }
+    &__close {
+      margin-top: -50px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 500px) { 
+
+  .jsi-menu {
+    &__navigation li a {
+      width: 33%;
+    }
+    &__right {
+      margin-left: -45px;
+    }
+  }
+  .best-movie {
+    flex-direction: column;
+    &__img > img {
+      transform: scale(1.05);
+    }
+    &__button {
+      width: 100px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    border-bottom: none;
+    
+  }
+
+  a {
+    font-size: 20px;
+  }
+}
