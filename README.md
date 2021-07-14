@@ -9,7 +9,6 @@
 5. [Modify carousels with options](#3-modify-carousels-with-options)
 6. [Author](#4-author)
 
-
 ## 1. Technologies
 
 - SASS
@@ -19,6 +18,8 @@
 ## 2. General information
 
 Front-end for JustStreamIt website ( Project 6 AD Python-student). JustStreamIt allowing you to view various movie ratings in real time.
+This is a student project with no framework allowed, only CSS and Javascript.
+This project must have carousels, modals, a responsive design and interactions with an API.
 
 ## 3. Setup
 
@@ -42,13 +43,6 @@ $ python manage.py runserver
 ```
 
 Then open index.html with any browser.
-
-
-## 5.Modify carousels with options
-
-
-
-
 
 ## 4. Author
 
