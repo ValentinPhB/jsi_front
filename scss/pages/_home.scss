@@ -75,7 +75,6 @@ CAROUSELS
     display: table;
   }
   &__item {
-    cursor: pointer;
     transition: transform 0.3s;
     float: left;
   }
@@ -115,6 +114,7 @@ CAROUSELS
     opacity: 0;
   }
   &__img-format img {
+    cursor: pointer;
     display: block;
     @include margin-lr;
     border: 2px solid #fff;
