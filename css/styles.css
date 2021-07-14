@@ -198,7 +198,6 @@ CAROUSELS
 }
 
 .carousel__item {
-  cursor: pointer;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -255,6 +254,7 @@ CAROUSELS
 }
 
 .carousel__img-format img {
+  cursor: pointer;
   display: block;
   margin-left: auto;
   margin-right: auto;
