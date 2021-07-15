@@ -322,22 +322,37 @@ async function createElementsModals(id) {
     const url = `http://localhost:8000/api/v1/titles/${id}`;
     const response = await fetch(url);
     const data = await response.json();
+    let div = document.querySelector('.modal__content');
 
-    let image = document.getElementById('img-movie');
-    image.src = data["image_url"];
-    image.alt = `affiche du film '${data["title"]}'.`;
+    if (document.querySelector('#img-movie') != null) {
+      let toRemove = (document.querySelector('#img-movie'));
+      toRemove.remove();
 
-    innerCheck(data, "title", "Titre : ");
-    innerCheck(data, "genres", "Genre(s) : ");
-    innerCheck(data, "date_published", "Date de sortie : ");
-    innerCheck(data, "rated", "Rated : ");
-    innerCheck(data, "imdb_score", "Score Imdb : ");
-    innerCheck(data, "directors", "Réalisateur(s) : ");
-    innerCheck(data, "actors", "Acteur(s) : ");
-    innerCheck(data, "duration", "Durée : ");
-    innerCheck(data, "countries", "Pays d'origine : ");
-    innerCheck(data, "worldwide_gross_income", "Résultat au Box Office : " );
-    innerCheck(data, "long_description", "");
+      let image = document.createElement('img');
+      image.setAttribute('id', 'img-movie');
+      image.src = data["image_url"];
+      image.alt = `affiche du film '${data["title"]}'.`;
+      div.appendChild(image);
+    } else if (document.querySelector('#img-movie') === null) {
+      let image = document.createElement('img');
+      image.setAttribute('id', 'img-movie');
+      image.src = data["image_url"];
+      image.alt = `affiche du film '${data["title"]}'.`;
+      div.appendChild(image);
+    }
+
+    innerCheck(data, "title", "Titre : ", div);
+    innerCheck(data, "genres", "Genre(s) : ", div);
+    innerCheck(data, "date_published", "Date de sortie : ", div);
+    innerCheck(data, "rated", "Rated : ", div);
+    innerCheck(data, "imdb_score", "Score Imdb : ", div);
+    innerCheck(data, "directors", "Réalisateur(s) : ", div);
+    innerCheck(data, "actors", "Acteur(s) : ", div);
+    innerCheck(data, "duration", "Durée : ", div);
+    innerCheck(data, "countries", "Pays d'origine : ", div);
+    innerCheck(data, "worldwide_gross_income", "Résultat au Box Office : ", div);
+    innerCheck(data, "long_description", "", div);
+    
 }
 
 /**
@@ -346,14 +361,35 @@ async function createElementsModals(id) {
    * @param {string}  element.
    * @param {string}  title.
    */
-function innerCheck (data, element, title) {
-  if (data[element] === null) {
-    document.getElementById(element).innerHTML = `${title}Valeur manquante.`;
-  } else if (data[element] != null) {
-    document.getElementById(element).innerHTML = `${title}${data[element]}.`;
+function innerCheck (data, element, title, div) {
+  
+  if (document.querySelector(`#${element}`) != null) {
+    let toRemove = (document.querySelector(`#${element}`));
+    toRemove.remove();
+
+    let text = document.createElement('h3');
+    text.setAttribute('id', element);
+
+    if (data[element] === null) {
+      text.innerHTML = `${title}Valeur manquante.`;
+      div.appendChild(text);
+    } else if (data[element] != null) {
+      text.innerHTML = `${title}${data[element]}.`;
+      div.appendChild(text);
+    };
+  } else if (document.querySelector(`#${element}`) === null){
+    let text = document.createElement('h3');
+    text.setAttribute('id', element);
+
+    if (data[element] === null) {
+      text.innerHTML = `${title}Valeur manquante.`;
+      div.appendChild(text);
+    } else if (data[element] != null) {
+      text.innerHTML = `${title}${data[element]}.`;
+      div.appendChild(text);
+    }
   }
 }
-
 /**
    * Create carousels with options. OPTIONS FOR USER.
    * @param {string} carousel id of carousel.
