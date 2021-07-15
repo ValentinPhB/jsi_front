@@ -24,7 +24,7 @@ This project must have carousels, modals, a responsive design and interactions w
 ## 3. Setup
 
 After downloading jsi_front-main.zip from Github, extract it to a location of your choice (exemple : "PATH").
-Or if you use git, download it from https://github.com/ValentinPhB/jsi_front
+Or if you use git, download it from https://github.com/ValentinPhB/jsi_front .
 
 Follow the instruction from https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR to install the local API.
 
@@ -42,7 +42,7 @@ And run the server with :
 $ python manage.py runserver
 ```
 
-Then open index.html with any browser.
+Then the server is running, just open index.html with any browser.
 
 ## 4. Author
 
