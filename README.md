@@ -6,8 +6,7 @@
 2. [General information](#2-general-information)
 3. [Setup](#3-setup)
 4. [Run index.html](#4-run-index-html)
-5. [Modify carousels with options](#3-modify-carousels-with-options)
-6. [Author](#4-author)
+5. [Author](#4-author)
 
 ## 1. Technologies
 
@@ -44,6 +43,6 @@ $ python manage.py runserver
 
 Then the server is running, just open index.html with any browser.
 
-## 4. Author
+## 5. Author
 
 Valentin Pheulpin
